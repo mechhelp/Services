@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer and Earn</title>
+    <link rel="icon"  href="/vite.png" />
+
+    <style>
+        /* Existing Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background-color: darkorange;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        .cta-button {
+            background-color: #fff;
+            color: darkorange;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .how-it-works, .leaderboard, .dashboard {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .steps {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .dashboard .info-box, .dashboard .form-group {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .generate-button, .home-button {
+            background-color: darkorange;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .generate-button, .home-button {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Invite Friends, Earn Rewards!</h1>
+            <p>Earn rewards every time a friend joins through your unique referral link.</p>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Share Link</h3>
+                    <p>Enter details and share this link</p>
+                </div>
+                <div class="step">
+                    <h3>2. Friend Signs Up</h3>
+                    <p>When your friend uses this code in the chatbot</p>
+                </div>
+                <div class="step">
+                    <h3>3. Earn Rewards</h3>
+                    <p>Get rewarded every time a friend joins and completes an action.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="dashboard">
+            <h2 class="section-title">Your Dashboard</h2>
+            
+            <!-- Input fields for name and number -->
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Your Phone Number:</label>
+                <input type="text" id="phone" placeholder="Enter your phone number">
+            </div>
+            
+            <!-- Button to generate WhatsApp message -->
+            <button class="generate-button" onclick="generateWhatsAppMessage()">Generate WhatsApp Message</button>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="form-group" style="margin-top: 10vh; display: flex; justify-content: center;">
+            <a href="index.html" class="home-button" style="text-decoration: none;">Back to Home Page</a>
+        </div>
+    </div>
+
+    <script>
+        function generateWhatsAppMessage() {
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            
+            // Check if phone number is exactly 10 digits
+            const isValidPhone = /^\d{10}$/.test(phone);
+    
+            if (name && isValidPhone) {
+                const referralLink = "https://vn2103.github.io/Mechhelp-services/"; // Phone number as referral code
+                const message = `Hello! This is ${name}. I've been using MechHelp and had a great experience! Use my referral code ${phone} to sign up and enjoy the benefits. Here’s the link to join: ${referralLink}`;
+                const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    
+                window.open(whatsappLink, '_blank');
+            } else if (!name) {
+                alert("Please enter your name.");
+            } else if (!isValidPhone) {
+                alert("Please enter a valid 10-digit phone number.");
+            }
+        }
+    </script>
+            
+</body>
+</html>

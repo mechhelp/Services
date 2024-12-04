@@ -1,0 +1,1165 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.poppins-thin {
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+ 
+  
+
+.slider-container {
+  margin-left: 5.5%;
+  margin-right: 0;
+  padding-right:0 ;
+  width: 90%;
+  height: 100vh;
+  perspective: 1000px;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  transform-style: preserve-3d;
+}
+
+.slide {
+  position: absolute;
+  width: calc(70vh * 2 / 3);
+  height: 70vh;
+  border-radius: 20px;
+  transition: transform 1s ease-in-out;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.slide-1 {
+    background-image: url('2.svg');
+}
+
+.slide-2 {
+    background-image: url('4.svg');
+}
+
+.slide-3 {
+    background-image: url('6.svg');
+}
+
+.content {
+    position: absolute;
+    font-size: 1rem;
+    left: 6%;
+    opacity: 0;
+    color: white;
+    text-align: left;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+ .head{
+  margin-top:2vh ;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 0px;
+ }
+ .data{
+  margin-top: 1;
+  margin-bottom: 0;
+  font-size: 0.7rem;
+ }
+ .content p{
+  margin-right: 6px;
+  overflow-x: hidden;
+ }
+ @keyframes widt {
+  0%{
+    filter: brightness(1.5);
+  }
+ 
+  50%{
+    filter: brightness(0.6);
+  }
+ 
+  100%{
+    filter: brightness(1.5);
+  }
+  
+ }
+.content img{
+  border: blue 2px;
+  position: relative;
+  bottom: 20px;
+  width: 30%;
+  filter: brightness(1.5);
+  animation: widt 1s infinite;
+  cursor: pointer;
+}
+@keyframes opa {
+  from{
+    opacity: 0;
+  }  
+  to{
+    opacity: 1;
+  }
+}
+.ac .content{
+  animation: opa 2s;
+  opacity: 1;
+}
+button:hover {
+    background-color: darkorange;
+}
+
+.slide:nth-child(1) {
+    transform: translate3d(-300px, 0, -200px) scale(0.9);
+}
+
+.slide:nth-child(2) {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+}
+
+.slide:nth-child(3) {
+    transform: translate3d(300px, 0, -200px) scale(0.9);
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  height: 10px;
+  width: 10px;
+  background-color: orange;
+}
+#loader {
+    display: none; /* Initially hidden */
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+
+  /* Loader animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+html,body{
+    width:100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    width:100%;
+    height:15vh;
+    background-color:#FB6901 ;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(23, 22, 22,80%);
+}
+
+header span{
+    margin:10px;
+    font-size: 3.5rem;
+}
+
+header .logo-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header img{
+    height:80%;
+}
+
+header .name{
+    font-style: italic;
+    font-size: 3.5rem;
+}
+
+header .whatsapp_logo{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width:10%;
+    z-index: 0;
+    margin-top: 1%;
+    align-items: center;
+}
+
+.whatsapp-bg{
+    z-index: 0;
+    display: flex;
+    align-items: center;
+}
+
+header .whatsapp_logo .whatsapp-bg i{
+    height:10px;
+    width:10px;
+    font-size: 2rem;
+    color: aliceblue;
+    z-index: 9999;
+
+}
+
+
+.circle{
+    height:30px;
+    width:30px;
+    background:  #25d366;
+    border-radius:50%;
+    animation:pulse 2s linear infinite;
+    position:absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.circle:nth-child(1){
+    animation: none;
+    background:  #25d366;
+    z-index:-1 ;
+
+}
+
+.circle:nth-child(2){
+    animation-delay: 0.003s;
+    z-index:-1 ;
+    overflow: hidden;
+}
+
+@keyframes pulse{
+    to{
+        transform:scale(3);
+        opacity:0;
+        overflow: hidden;
+    }
+}
+
+.whatsapp_logo p{
+    margin-top:10%;
+    font-size:0.7rem;
+    z-index: 200;
+    font-weight: 400;
+}
+
+.refer-earn{
+    position:relative;
+    z-index: 0;
+    width:100%;
+    padding-bottom: 0;
+}
+
+.refer-earn .bottom-image{
+    position: absolute;
+    left:0;
+    right:0;
+    z-index:-1;
+    width:100%;
+    
+}
+.refer-earn .bottom-image img{
+    width:100%;
+    height: 800px;
+    padding: 2%;
+    padding-bottom: 0;
+}
+
+.refer-earn .refer-page{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    height:100%;
+    width:auto;
+    z-index: 1;
+    margin-left: 0;
+}
+
+
+.refer-earn .refer-page .refer{
+    font-weight: 400;
+    padding-top: 20px;
+    font-size: 4.5rem ;
+    margin-bottom: 0;
+}
+
+.refer-page .invite{
+    font-weight: 300;
+    left:0;
+    top:0;
+    margin-top: 0;
+    padding-top: 0;
+    font-size:1.5rem ;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+.refer-earn .refer-page button{
+    margin-top: 0;
+    padding-top: 0;
+    height:35px;
+    width:130px;
+    font-size: 20px ;
+    border-radius: 20px;
+}
+
+.refer-earn .refer-page .number{
+    padding-top: 1%;
+    font-size: 1.5rem;
+}
+
+.refer-earn .refer-page .number i{
+    font-size: 1.5rem;
+}
+
+
+
+@media (max-width: 374px){
+    header{
+        height:10%;
+        width:100%;
+    }
+
+    header span{
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+        margin-top: 15px;
+    }
+
+    header img{
+        height:80%;
+    }
+
+    header .name{
+        font-size: 1.5rem;
+    }
+
+    header .whatsapp_logo{
+        margin-top: 20px;
+        width:20%;
+    }
+
+    .slider-container {
+        width: 90%;
+        height: 70vh;
+        position: relative;
+        perspective: 1000px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        transform-style: preserve-3d;
+    }
+    
+    .slide {
+        position: absolute;
+        width: calc(60vh * 2 / 3);
+        height: 100%;
+        border-radius: 20px;
+        transition: transform 1s ease-in-out;
+        opacity: 0.5;
+        background-size: cover;
+        background-position: center;
+    }
+    
+       
+    
+        .head{
+          font-size: 1.2rem;
+          font-weight: 900;
+          margin-bottom: 0px;
+         }
+         .data{
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 0.6rem;
+         }
+         .content p{
+          margin-right: 6px;
+          overflow-x: hidden;
+         }
+         .content img{
+          position: relative;
+          bottom: 15px;
+          border-radius: 50%;
+          width: 45%;
+          animation: widt 2s infinite;
+        }
+    
+    
+header .whatsapp_logo .whatsapp-bg i{
+    font-size: 1.5rem;
+}
+    
+    .whatsapp_logo p{
+        margin-top:3px;
+        margin-bottom: 0;
+        font-size: 0.5rem;
+    }
+    
+    
+    .circle{
+        height:20px;
+        width:20px;
+        
+    }
+    
+    .circle:nth-child(1){
+        height:15px;
+        width:15px;
+    }
+    
+
+    .refer-earn{
+        width:100%;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    
+    .refer-earn .bottom-image img{
+        width:100%;
+        height: 270px;
+        padding: 0;
+    }
+    
+    .refer-earn .refer-page{
+        width:100%;
+        margin-left: 0px;
+    }
+    
+    .refer-earn .refer-page .refer{
+       padding-top: 4px;
+       margin-top: 0;
+       font-size:1rem;
+       margin-left: 5px;
+
+    }
+    
+    .refer-earn .refer-page .invite{
+        font-size:0.7rem;
+        margin-bottom: 10px;
+    }
+    
+    
+    .refer-earn .refer-page button{
+        height:1.5rem;
+        width:4.5rem;
+        font-size:0.7rem;
+        margin-left: 5px;
+    }
+
+    .refer-earn .refer-page .number{
+        padding-top: 1%;
+        font-size: 0.7rem;
+    }
+    
+    .refer-earn .refer-page .number i{
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px){
+        header{
+            height:10%;
+            width:100%;
+        }
+    
+        header span{
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            margin-top: 15px;
+        }
+    
+        header img{
+            height:80%;
+        }
+    
+        header .name{
+            font-size: 1.5rem;
+        }
+    
+        header .whatsapp_logo{
+            margin-top: 20px;
+            width:20%;
+        }
+    
+        
+    header .whatsapp_logo .whatsapp-bg i{
+        font-size: 1.5rem;
+    }
+    .slider-container {
+        width: 90%;
+        height: 65vh;
+        position: relative;
+        perspective: 1000px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        transform-style: preserve-3d;
+    }
+    
+    .slide {
+        position: absolute;
+        width: calc(60vh * 2 / 3);
+        height: 100%;
+        border-radius: 20px;
+        transition: transform 1s ease-in-out;
+        opacity: 0.5;
+        background-size: cover;
+        background-position: center;
+    }
+    
+       
+    
+        .head{
+          font-size: 1.2rem;
+          font-weight: 900;
+          margin-bottom: 0px;
+         }
+         .data{
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 0.6rem;
+         }
+         .content p{
+          margin-right: 6px;
+          overflow-x: hidden;
+         }
+         .content img{
+          position: relative;
+          bottom: 15px;
+          border-radius: 50%;
+          width: 45%;
+          animation: widt 2s infinite;
+        }
+    
+    
+        
+        .whatsapp_logo p{
+            margin-top:3px;
+            margin-bottom: 0;
+            font-size: 0.5rem;
+        }
+        
+        
+        .circle{
+            height:20px;
+            width:20px;
+            
+        }
+        
+        .circle:nth-child(1){
+            height:15px;
+            width:15px;
+        }
+        
+    
+        .refer-earn{
+            width:100%;
+            padding-left: 0;
+        }
+    
+        
+        .refer-earn .bottom-image img{
+            width:100%;
+            height: 300px;
+            padding: 0;
+        }
+        
+        .refer-earn .refer-page{
+            width:100%;
+            margin-top: 40px;
+        }
+        
+        .refer-earn .refer-page .refer{
+           padding-top: 4px;
+           margin-top: 0;
+           font-size:1.5rem;
+           margin-left: 5px;
+    
+        }
+        
+        .refer-earn .refer-page .invite{
+            font-size:0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        
+        .refer-earn .refer-page button{
+            height:1.5rem;
+            width:5.5rem;
+            font-size:0.9rem;
+            margin-left: 5px;
+        }
+
+        .refer-earn .refer-page .number{
+            padding-top: 1%;
+            font-size: 0.9rem;
+        }
+        
+        .refer-earn .refer-page .number i{
+            font-size: 0.9rem;
+        }
+}
+
+@media (min-width: 425px) and (max-width: 480px){
+    .slider-container {
+        width: 90%;
+        height: 65vh;
+        position: relative;
+        perspective: 1000px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        transform-style: preserve-3d;
+    }
+    
+    .slide {
+        position: absolute;
+        width: calc(60vh * 2 / 3);
+        height: 100%;
+        border-radius: 20px;
+        transition: transform 1s ease-in-out;
+        opacity: 0.5;
+        background-size: cover;
+        background-position: center;
+    }
+    
+       
+    
+        .head{
+          font-size: 1.2rem;
+          font-weight: 900;
+          margin-bottom: 0px;
+         }
+         .data{
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 0.6rem;
+         }
+         .content p{
+          margin-right: 6px;
+          overflow-x: hidden;
+         }
+         .content img{
+          position: relative;
+          bottom: 15px;
+          border-radius: 50%;
+          width: 40%;
+          animation: widt 2s infinite;
+        }
+    
+    
+    header{
+        height:10%;
+        width:100%;
+    }
+
+    header span{
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+        margin-top: 15px;
+    }
+
+    header img{
+        height:80%;
+    }
+
+    header .name{
+        font-size: 2rem;
+    }
+
+    header .whatsapp_logo{
+        margin-top: 20px;
+        width:20%;
+    }
+
+    
+header .whatsapp_logo .whatsapp-bg i{
+    font-size: 1.5rem;
+}
+    
+    .whatsapp_logo p{
+        margin-top:3px;
+        margin-bottom: 0;
+        font-size: 0.5rem;
+    }
+    
+    
+    .circle{
+        height:20px;
+        width:20px;
+        
+    }
+    
+    .circle:nth-child(1){
+        height:15px;
+        width:15px;
+    }
+    
+
+    .refer-earn{
+        width:100%;
+        padding-left: 0;
+    }
+
+    
+    .refer-earn .bottom-image img{
+        width:100%;
+        height: 400px;
+        padding: 0;
+    }
+    
+    .refer-earn .refer-page{
+        width:100%;
+        margin-top: 40px;
+    }
+    
+    .refer-earn .refer-page .refer{
+       padding-top: 4px;
+       margin-top: 0;
+       font-size:2rem;
+       margin-left: 5px;
+
+    }
+    
+    .refer-earn .refer-page .invite{
+        font-size:1rem;
+        margin-bottom: 10px;
+    }
+    
+    
+    .refer-earn .refer-page button{
+        height:2.2rem;
+        width:6.5rem;
+        font-size:1rem;
+        margin-left: 5px;
+    }
+
+    .refer-earn .refer-page .number{
+        padding-top: 1%;
+        font-size: 1rem;
+    }
+    
+    .refer-earn .refer-page .number i{
+        font-size:1rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    header{
+        height:10%;
+        width:100%;
+    }
+
+    header span{
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        margin-top: 15px;
+    }
+
+    header img{
+        height:85%;
+    }
+
+    header .name{
+        font-size: 3rem;
+    }
+
+    header .whatsapp_logo{
+        margin-top: 10px;
+        width:20%;
+    }
+
+    
+header .whatsapp_logo .whatsapp-bg i{
+    font-size: 2rem;
+}
+    
+    .whatsapp_logo p{
+        margin-top:5px;
+        margin-bottom: 0;
+        font-size: 0.7rem;
+    }
+    .slider-container {
+        width: 90%;
+        height: 66vh;
+        position: relative;
+        perspective: 1000px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        transform-style: preserve-3d;
+    }
+    
+    .slide {
+        position: absolute;
+        width: calc(60vh * 2 / 3);
+        height: 100%;
+        border-radius: 20px;
+        transition: transform 1s ease-in-out;
+        opacity: 0.5;
+        background-size: cover;
+        background-position: center;
+    }
+    
+       
+    
+        .head{
+          font-size: 1r0.9m;
+          font-weight: 900;
+          margin-bottom: 0px;
+         }
+         .data{
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 0.6rem;
+         }
+         .content p{
+          margin-right: 6px;
+          overflow-x: hidden;
+         }
+         .content img{
+          position: relative;
+          bottom: 15px;
+          border-radius: 50%;
+          width: 37%;
+          animation: widt 2s infinite;
+        }
+    
+    
+    
+    .circle{
+        height:30px;
+        width:30px;
+        
+    }
+    
+    .circle:nth-child(1){
+        height:15px;
+        width:15px;
+    }
+    
+
+    .refer-earn{
+        width:100%;
+        padding-left: 0;
+    }
+
+    
+    .refer-earn .bottom-image img{
+        width:100%;
+        height: 600px;
+        padding: 0;
+    }
+    
+    .refer-earn .refer-page{
+        width:100%;
+        margin-top: 40px;
+    }
+    
+    .refer-earn .refer-page .refer{
+       padding-top: 9px;
+       margin-top: 0;
+       font-size:2.8rem;
+       margin-left: 5px;
+
+    }
+    
+    .refer-earn .refer-page .invite{
+        font-size:1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    
+    .refer-earn .refer-page button{
+        height:2.8rem;
+        width:8.5rem;
+        font-size:1.5rem;
+        margin-left: 5px;
+    }
+
+    .refer-earn .refer-page .number{
+        padding-top: 1%;
+        font-size: 1.3rem;
+    }
+    
+    .refer-earn .refer-page .number i{
+        font-size:1.3rem;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px){
+    .slider-container {
+        width: 90%;
+        height: 65vh;
+        position: relative;
+        perspective: 1000px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        transform-style: preserve-3d;
+    }
+    
+    .slide {
+        position: absolute;
+        width: calc(60vh * 2 / 3);
+        height: 100%;
+        border-radius: 20px;
+        transition: transform 1s ease-in-out;
+        opacity: 0.5;
+        background-size: cover;
+        background-position: center;
+    }
+    
+       
+    
+        .head{
+          font-size: 1.2rem;
+          font-weight: 900;
+          margin-bottom: 0px;
+         }
+         .data{
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 0.6rem;
+         }
+         .content p{
+          margin-right: 6px;
+          overflow-x: hidden;
+         }
+         .content img{
+          position: relative;
+          bottom: 15px;
+          border-radius: 50%;
+          width: 0%;
+          animation: widt 2s infinite;
+        }
+    
+    
+    header{
+        height:20vh;
+        width:100%;
+    }
+
+    header span{
+        font-size: 70px;
+        margin-right: 0.5rem;
+        margin-top: 15px;
+    }
+
+    header img{
+        height:85%;
+    }
+
+    header .name{
+        font-size: 3.5rem;
+    }
+
+    header .whatsapp_logo{
+        margin-top: 20px;
+        width:20%;
+    }
+
+    
+header .whatsapp_logo .whatsapp-bg i{
+    font-size: 3.5rem;
+}
+    
+    .whatsapp_logo p{
+        margin-top:8px;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+    
+    
+    .circle{
+        height:55px;
+        width:55px;
+        
+    }
+    
+    .circle:nth-child(1){
+        height:15px;
+        width:15px;
+    }
+    
+
+    .refer-earn{
+        width:100%;
+        padding-left: 0;
+    }
+
+    
+    .refer-earn .bottom-image img{
+        width:100%;
+        height: 800px;
+        padding: 0;
+    }
+    
+    .refer-earn .refer-page{
+        width:100%;
+        margin-top: 40px;
+    }
+    
+    .refer-earn .refer-page .refer{
+       padding-top: 9px;
+       margin-top: 0;
+       font-size:3.5rem;
+       margin-left: 5px;
+
+    }
+    
+    .refer-earn .refer-page .invite{
+        font-size:2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    
+    .refer-earn .refer-page button{
+        height:2.5rem;
+        width:8.5rem;
+        font-size:1.5rem;
+        margin-left: 5px;
+    }
+
+    .refer-earn .refer-page .number{
+        padding-top: 1%;
+        font-size: 1.5rem;
+    }
+    
+    .refer-earn .refer-page .number i{
+        font-size:1.5rem;
+    }
+}
